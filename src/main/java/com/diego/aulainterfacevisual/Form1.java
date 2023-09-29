@@ -143,6 +143,11 @@ public class Form1 extends javax.swing.JFrame {
                 linha1Campo6PropertyChange(evt);
             }
         });
+        linha1Campo6.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                linha1Campo6KeyPressed(evt);
+            }
+        });
 
         linha1Campo5.setBackground(new java.awt.Color(153, 153, 153));
         linha1Campo5.setFont(new java.awt.Font("Bosch Sans", 1, 48)); // NOI18N
@@ -688,9 +693,12 @@ public class Form1 extends javax.swing.JFrame {
     }//GEN-LAST:event_linha1Campo6PropertyChange
 
     private void linha1Campo6InputMethodTextChanged(java.awt.event.InputMethodEvent evt) {//GEN-FIRST:event_linha1Campo6InputMethodTextChanged
-        System.out.println("Mudar texto");
-        System.out.println(evt.getText());// TODO add your handling code here:
+       // TODO add your handling code here:
     }//GEN-LAST:event_linha1Campo6InputMethodTextChanged
+
+    private void linha1Campo6KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_linha1Campo6KeyPressed
+        System.out.println("clicaram " + evt.getKeyChar());        // TODO add your handling code here:
+    }//GEN-LAST:event_linha1Campo6KeyPressed
 
     /**
      * @param args the command line arguments
