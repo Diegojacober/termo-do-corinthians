@@ -4,12 +4,16 @@
  */
 package com.diego.aulainterfacevisual;
 
+import java.util.Arrays;
+import java.util.List;
+
 /**
  *
  * @author ct67ca
  */
 public class Form1 extends javax.swing.JFrame {
 
+    private Game game = new Game();
     /**
      * Creates new form Form1
      */
@@ -696,8 +700,15 @@ public class Form1 extends javax.swing.JFrame {
        // TODO add your handling code here:
     }//GEN-LAST:event_linha1Campo6InputMethodTextChanged
 
-    private void linha1Campo6KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_linha1Campo6KeyPressed
-        System.out.println("clicaram " + evt.getKeyChar());        // TODO add your handling code here:
+    private void linha1Campo6KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_linha1Campo6KeyPresse
+        List<String> letras = Arrays.asList(linha1Campo1.getText().toUpperCase(),
+                linha1Campo2.getText().toUpperCase(),
+                linha1Campo3.getText().toUpperCase(),
+                linha1Campo4.getText().toUpperCase(),
+                linha1Campo5.getText().toUpperCase(),
+                String.valueOf(evt.getKeyChar()).toUpperCase());
+        // TODO add your handling code here:
+        game.setLinha01(letras);
     }//GEN-LAST:event_linha1Campo6KeyPressed
 
     /**
