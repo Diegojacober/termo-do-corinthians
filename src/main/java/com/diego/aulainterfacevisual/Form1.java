@@ -4,6 +4,7 @@
  */
 package com.diego.aulainterfacevisual;
 
+import java.awt.event.KeyEvent;
 import java.util.Arrays;
 import java.util.List;
 
@@ -19,6 +20,7 @@ public class Form1 extends javax.swing.JFrame {
      */
     public Form1() {
         initComponents();
+        game.sortearPalavra();
     }
 
     /**
@@ -150,6 +152,24 @@ public class Form1 extends javax.swing.JFrame {
         linha1Campo6.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 linha1Campo6KeyPressed(evt);
+            }
+        });
+
+        linha2Campo6.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                linha2Campo6KeyPressed(evt);
+            }
+        });
+
+        linha3Campo6.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                linha3Campo6KeyPressed(evt);
+            }
+        });
+
+        linha4Campo6.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                linha4Campo6KeyPressed(evt);
             }
         });
 
@@ -685,8 +705,63 @@ public class Form1 extends javax.swing.JFrame {
     }//GEN-LAST:event_formWindowClosed
 
     private void ButtonJogarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonJogarMouseClicked
-        System.out.println("Jogar");        // TODO add your handling code here:
-    }//GEN-LAST:event_ButtonJogarMouseClicked
+        game.play();
+        clearFields();
+    }
+
+    private void clearFields() {
+        linha1Campo1.setBackground(new java.awt.Color(153, 153, 153));
+        linha1Campo2.setBackground(new java.awt.Color(153, 153, 153));
+        linha1Campo3.setBackground(new java.awt.Color(153, 153, 153));
+        linha1Campo4.setBackground(new java.awt.Color(153, 153, 153));
+        linha1Campo5.setBackground(new java.awt.Color(153, 153, 153));
+        linha1Campo6.setBackground(new java.awt.Color(153, 153, 153));
+        linha1Campo1.setText("");
+        linha1Campo2.setText("");
+        linha1Campo3.setText("");
+        linha1Campo4.setText("");
+        linha1Campo5.setText("");
+        linha1Campo6.setText("");
+
+        linha2Campo1.setBackground(new java.awt.Color(153, 153, 153));
+        linha2Campo2.setBackground(new java.awt.Color(153, 153, 153));
+        linha2Campo3.setBackground(new java.awt.Color(153, 153, 153));
+        linha2Campo4.setBackground(new java.awt.Color(153, 153, 153));
+        linha2Campo5.setBackground(new java.awt.Color(153, 153, 153));
+        linha2Campo6.setBackground(new java.awt.Color(153, 153, 153));
+        linha2Campo1.setText("");
+        linha2Campo2.setText("");
+        linha2Campo3.setText("");
+        linha2Campo4.setText("");
+        linha2Campo5.setText("");
+        linha2Campo6.setText("");
+
+        linha3Campo1.setBackground(new java.awt.Color(153, 153, 153));
+        linha3Campo2.setBackground(new java.awt.Color(153, 153, 153));
+        linha3Campo3.setBackground(new java.awt.Color(153, 153, 153));
+        linha3Campo4.setBackground(new java.awt.Color(153, 153, 153));
+        linha3Campo5.setBackground(new java.awt.Color(153, 153, 153));
+        linha3Campo6.setBackground(new java.awt.Color(153, 153, 153));
+        linha3Campo1.setText("");
+        linha3Campo2.setText("");
+        linha3Campo3.setText("");
+        linha3Campo4.setText("");
+        linha3Campo5.setText("");
+        linha3Campo6.setText("");
+
+        linha4Campo1.setBackground(new java.awt.Color(153, 153, 153));
+        linha4Campo2.setBackground(new java.awt.Color(153, 153, 153));
+        linha4Campo3.setBackground(new java.awt.Color(153, 153, 153));
+        linha4Campo4.setBackground(new java.awt.Color(153, 153, 153));
+        linha4Campo5.setBackground(new java.awt.Color(153, 153, 153));
+        linha4Campo6.setBackground(new java.awt.Color(153, 153, 153));
+        linha4Campo1.setText("");
+        linha4Campo2.setText("");
+        linha4Campo3.setText("");
+        linha4Campo4.setText("");
+        linha4Campo5.setText("");
+        linha4Campo6.setText("");
+    }
 
     private void linha01PropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_linha01PropertyChange
        // TODO add your handling code here:
@@ -707,13 +782,48 @@ public class Form1 extends javax.swing.JFrame {
                 linha1Campo4.getText().toUpperCase(),
                 linha1Campo5.getText().toUpperCase(),
                 String.valueOf(evt.getKeyChar()).toUpperCase());
-        // TODO add your handling code here:
         game.setLinha01(letras);
-    }//GEN-LAST:event_linha1Campo6KeyPressed
+        game.verifyWord(Arrays.asList(linha1Campo1, linha1Campo2, linha1Campo3, linha1Campo4, linha1Campo5, linha1Campo6), game.getLinha01());
+    }
 
-    /**
-     * @param args the command line arguments
-     */
+    private void linha2Campo6KeyPressed(KeyEvent evt) {
+        List<String> letras = Arrays.asList(
+                linha2Campo1.getText().toUpperCase(),
+                linha2Campo2.getText().toUpperCase(),
+                linha2Campo3.getText().toUpperCase(),
+                linha2Campo4.getText().toUpperCase(),
+                linha2Campo5.getText().toUpperCase(),
+                String.valueOf(evt.getKeyChar()).toUpperCase());
+        game.setLinha02(letras);
+        game.verifyWord(Arrays.asList(linha2Campo1, linha2Campo2, linha2Campo3, linha2Campo4, linha2Campo5, linha2Campo6), game.getLinha02());
+    }
+
+    private void linha3Campo6KeyPressed(KeyEvent evt) {
+        List<String> letras = Arrays.asList(
+                linha3Campo1.getText().toUpperCase(),
+                linha3Campo2.getText().toUpperCase(),
+                linha3Campo3.getText().toUpperCase(),
+                linha3Campo4.getText().toUpperCase(),
+                linha3Campo5.getText().toUpperCase(),
+                String.valueOf(evt.getKeyChar()).toUpperCase());
+        game.setLinha03(letras);
+        game.verifyWord(Arrays.asList(linha3Campo1, linha3Campo2, linha3Campo3, linha3Campo4, linha3Campo5, linha3Campo6), game.getLinha03());
+    }
+
+    private void linha4Campo6KeyPressed(KeyEvent evt) {
+        List<String> letras = Arrays.asList(
+                linha4Campo1.getText().toUpperCase(),
+                linha4Campo2.getText().toUpperCase(),
+                linha4Campo3.getText().toUpperCase(),
+                linha4Campo4.getText().toUpperCase(),
+                linha4Campo5.getText().toUpperCase(),
+                String.valueOf(evt.getKeyChar()).toUpperCase());
+        game.setLinha04(letras);
+        game.verifyWord(Arrays.asList(linha4Campo1, linha4Campo2, linha4Campo3, linha4Campo4, linha4Campo5, linha4Campo6), game.getLinha04());
+    }
+
+
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
